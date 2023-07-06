@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#000000">
+	<link rel="stylesheet" href="./style.css">
+	<link rel="shortcut icon" href="./assests/favicons/512x512bb.jpg" type="image/x-icon">
+	<link rel="manifest" href="./manifest.json">
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+	<title>Tobacco Leaf Scanner</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<div id="camera-container">
+		<video autoplay id="camera-video"></video>
+		<img src="./assests/icons/Bounding Box.png" id="box-view" alt="">
+		<div id="top-down__menu">
+			<div id="top__menu">
+				<div id="empty-top__menu"></div>
+				<p>SCAN</p>
+				<img id="info-outline" src="./assests/icons/info_outline.svg" alt="">
+			</div>
+			<div id="down__menu">
+				<label id="file-picker__label">
+					<img src="./assests/icons/images.svg" id="file-picker__img" alt="">
+					<input type="file" id="file-picker" accept="image/jpeg,image/jpg,image/png">
+				</label>
+				<img id="click" src="./assests/icons/search.svg" alt="">
+				<div id="empty-down__menu"></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="result-cont">	
+		<div id="result-down-menu">
+			<img id="closedown" src="./assests/icons/close down.svg" alt="">		
+		</div>
+		<img id="result-img" src="" alt="">
+		<div id="result__text">
+			<p class="p-disease">
+				<span class="Q disease"></span>
+				<span class="RA cont-disease"></span>
+			</p>
+			<p class="p-fertilizers">
+				<span class="Q fertilizers">Fertilizers :</span>
+				<p class="RA cont-fertilizers"></p>
+				<p class="links-fertilizers">
+					<a class="img-ref" href="">Product Image</a>
+					<a class="shoplink-ref" href="">Product Link</a>
+				</p>
+			</p>
+			<p class="p-causes">
+				<span class="Q causes"></span>
+				<span class="RA cont-causes"></span>
+			</p>
+		</div>
+	</div>
+
+	<div id="info-cont__outer">
+		<div id="info-cont">
+			<div id="info-cont__inner">
+				<div id="info__closedown">
+					<img src="./assests/icons/close down.svg" alt="">
+				</div>
+				<div id="info__text">
+					<div class="logo-version">
+						<img src="./assests/favicons/512x512bb.jpg" alt="">
+						<p>Tobacco Leaf Scanner</p>
+						<p>V 1.0.9</p>
+					</div>
+					<div class="dev-cont">
+						<div class="dev dev1">
+							<div class="flex1-div">
+								<img src="./assests/icons/avatar1.svg" alt="avatar">
+								<div>
+									<p class="dev-name">MOHITH KUMAR BEZAWADA</p>
+								</div>
+							</div>
+							<div class="dev-links">
+								<a href="mailto:bezawadamohith14@gmail.com"><i class="fa fa-envelope"></i></a>
+								<a href="https://www.instagram.com/myselfmohith/" target="_blank"><i class="fa fa-instagram"></i></a>
+								<a href="https://github.com/myselfmohith/" target="_blank"><i class="fa fa-github"></i></a>
+							</div>
+						</div>
+						<div class="dev dev2">
+							<div class="flex1-div">
+								<img src="./assests/icons/avatar2.svg" alt="">
+								<div>
+									<p class="dev-name">RAMA KRISHNA RAO KAKUMANI</p>
+								</div>
+							</div>
+							<div class="dev-links">
+								<a href="mailto:kakumaniramakrishnarao.9640@gmail.com"><i class="fa fa-envelope"></i></a>
+								<a href="https://www.instagram.com/_ramakrishnarao/" target="_blank"><i class="fa fa-instagram"></i></a>
+								<a href="https://github.com/9919004330/" target="_blank"><i class="fa fa-github"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="postdata.js"></script>
+	<script>
+		let serviceWorker = null;
+        (async () => {
+            if ('serviceWorker' in navigator) {
+                try {
+                    serviceWorker = await navigator.serviceWorker.register('./sw.js');
+                } catch (error) {
+                    serviceWorker = null;
+                }
+            }
+        })();
+
+	</script>
+	<script src="script.js"></script>
+</body>
+
+</html>

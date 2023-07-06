@@ -1,0 +1,17 @@
+{
+    "short_name": "TL Scan",
+    "name": "Tobacoo Leaf Scan",
+    "start_url": "./",
+    "scope": "./",
+    "background_color": "#000000",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "description": "Tobacco Plant Diseases detector from leaf Image",
+    "icons": [
+        {
+            "src": "./assests/favicons/512x512bb.jpg",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
